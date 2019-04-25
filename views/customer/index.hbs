@@ -1,4 +1,7 @@
 <main>
-    <h1>Garden Cakes</h1>
-    <h2>Cakes Inspired By Nature</h2>
+    {{#each cakes}}
+    <img src="{{img}}" alt="">
+    <a href="/cakes/{{_id}}">{{name}}</a>
+    <p>${{price}}</p>
+    {{/each}}
 </main>
