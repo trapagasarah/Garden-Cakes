@@ -5,7 +5,7 @@ const Order = mongoose.Schema({
     cakeId: {type: ObjectId, ref : 'Cake'},
     quantity: Number,
     status: String,
-    pickUp: Date,
+    pickUp: String,
     comments: String,
 });
 

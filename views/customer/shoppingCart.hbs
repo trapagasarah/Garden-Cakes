@@ -3,7 +3,7 @@
 <img src="{{cakeId.image}}" alt="">
 <br>
 <h3>Name: {{cakeId.name}}</h3>
-<h3>Price per Cake:{{cakeId.price}}</h3>
+<h3>Price per Cake: ${{cakeId.price}}</h3>
 <form action="/shoppingCart/{{_id}}?_method=PUT" method="POST">
     <input type="number" name="quantity" value="{{quantity}}">
     <input type="datetime-local" name="pickUp" value="{{pickUp}}">
