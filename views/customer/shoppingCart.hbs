@@ -5,8 +5,11 @@
 <h3>Name: {{cakeId.name}}</h3>
 <h3>Price per Cake: ${{cakeId.price}}</h3>
 <form action="/shoppingCart/{{_id}}?_method=PUT" method="POST">
+    <label for="quantity">Quantity: </label>
     <input type="number" name="quantity" value="{{quantity}}">
+    <label for="pickUp">Pick Up Date and Time: </label>
     <input type="datetime-local" name="pickUp" value="{{pickUp}}">
+    <label for="comment">Comments: </label>
     <textarea name="comment" id="" cols="30" rows="10">{{comments}}</textarea>
     <input type="hidden" name="status" value="{{status}}">
     <input type="hidden" name="cakeId" value="{{cakeId._id}}">

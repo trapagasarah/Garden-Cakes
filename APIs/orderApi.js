@@ -7,6 +7,7 @@ function getShoppingCart() {
     return OrderCollection.find({ status: 'Cart' }).populate('cakeId')
 }
 
+
 module.exports = {
     createNewOrder,
     getShoppingCart
