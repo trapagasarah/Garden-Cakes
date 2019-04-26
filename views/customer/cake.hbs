@@ -1,0 +1,16 @@
+<h1>{{cake.name}}</h1>
+<img src="{{cake.image}}" alt="">
+<p>{{cake.price}}</p>
+<p>{{cake.description}}</p>
+<form id="addToCartForm" action="/shoppingCart" method="POST">
+    <input type="number" name="quantity" value="1">
+    <input type="datetime-local" name="pickUp">
+    <textarea name="comments" id="" cols="30" rows="10" form="addToCartForm"></textarea>
+    <input type="hidden" name="status" value="Cart">
+    <input type="hidden" name="cakeId" value="{{cake._id}}">
+    <input type="submit" value="Add to Cart">
+</form>
+{{#each cake.reviews}}
+    <h3>{{customerName}}: {{rating}}</h3>
+    <p>{{explanation}}</p>
+{{/each}}

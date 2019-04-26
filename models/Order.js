@@ -1,7 +1,8 @@
 const mongoose = require('../db/connection.js');
-const Cake = require('Cake')
+const ObjectId = mongoose.Schema.Types.ObjectId;
+
 const Order = mongoose.Schema({
-    cake: Cake,
+    cakeId: {type: ObjectId, ref : 'Cake'},
     quantity: Number,
     status: String,
     pickUp: Date,

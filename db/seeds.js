@@ -1,5 +1,5 @@
 const Cake = require('../models/Cake')
-
+const Order = require('../models/Order')
 let newCakes = [
     {
         name: 'Butterfly Garden',
@@ -27,7 +27,12 @@ let newCakes = [
         reviews: []   
     }
 ]
-
+Order.deleteMany().then(() => {
+    console.log('Deleted orders')
+})
+Cake.deleteMany().then(() => {
+    console.log('Deleted cakes')
+})
 Cake.create(newCakes).then(cakes => {
     console.log('Saved cakes', cakes)
 })
