@@ -1,10 +1,13 @@
 <h1>{{cake.name}}</h1>
 <img src="{{cake.image}}" alt="">
-<p>{{cake.price}}</p>
+<p>${{cake.price}}</p>
 <p>{{cake.description}}</p>
 <form id="addToCartForm" action="/shoppingCart" method="POST">
+    <label for="quantity">Quantity: </label>
     <input type="number" name="quantity" value="1">
+    <label for="pickUp">Pick Up Date and Time: </label>
     <input type="datetime-local" name="pickUp">
+    <label for="comment">Comments: </label>
     <textarea name="comments" id="" cols="30" rows="10" form="addToCartForm"></textarea>
     <input type="hidden" name="status" value="Cart">
     <input type="hidden" name="cakeId" value="{{cake._id}}">
