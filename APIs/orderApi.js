@@ -12,7 +12,7 @@ function updateOrderById(orderId, order){
     }, order)
 }
 function deleteOrderById(orderId){
-    return OrderCollection.deleteOne({id: _orderId})
+    return OrderCollection.deleteOne({_id: orderId})
 }
 
 module.exports = {
