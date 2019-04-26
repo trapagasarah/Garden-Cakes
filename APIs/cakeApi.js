@@ -6,6 +6,7 @@ function getAllCakes(){
 function getCakeById(cakeId){
     return CakeCollection.findById(cakeId)
 }
+
  module.exports = {
      getAllCakes,
      getCakeById,

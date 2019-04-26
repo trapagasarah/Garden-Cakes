@@ -13,6 +13,8 @@
     <input type="hidden" name="cakeId" value="{{cake._id}}">
     <input type="submit" value="Add to Cart">
 </form>
+<h1>Leave a Review</h1>
+<form action="/review" method="POST"></form>
 {{#each cake.reviews}}
     <h3>{{customerName}}: {{rating}}</h3>
     <p>{{explanation}}</p>
