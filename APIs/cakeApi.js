@@ -6,8 +6,11 @@ function getAllCakes(){
 function getCakeById(cakeId){
     return CakeCollection.findById(cakeId)
 }
-
+function createNewCake(cake){
+    return CakeCollection.create(cake)
+}
  module.exports = {
      getAllCakes,
      getCakeById,
+     createNewCake
  }
