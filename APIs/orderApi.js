@@ -11,13 +11,22 @@ function updateOrderById(orderId, order){
         _id: orderId
     }, order)
 }
+function moveShoppingCartItemsToProcessing() {
+    return OrderCollection.updateMany({status: 'Cart'},{status: 'Processing'})
+}
 function deleteOrderById(orderId){
     return OrderCollection.deleteOne({_id: orderId})
+}
+function getSubmittedOrders(){
+    return OrderCollection.find({ status: {$in:['Processing', 'Baking', 'Completed']} }).populate('cakeId')
 }
 
 module.exports = {
     createNewOrder,
     getShoppingCart,
     updateOrderById,
-    deleteOrderById
+    deleteOrderById,
+    getSubmittedOrders,
+    moveShoppingCartItemsToProcessing
+
 }

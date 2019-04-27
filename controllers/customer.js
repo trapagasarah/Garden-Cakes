@@ -17,13 +17,18 @@ const customerController = {
     updateCart: function (req, res) {
         orderApi.updateOrderById(req.params.id, req.body)
             .then(() => orderApi.getShoppingCart())
-            .then((orders) => res.render('customer/shoppingCart', {orders}))
+            .then((orders) => res.render('customer/shoppingCart', { orders }))
     },
-   deleteFromCart: function (req, res){
-       orderApi.deleteOrderById(req.params.id)
-        .then(() => orderApi.getShoppingCart())
-        .then((orders) => res.render('customer/shoppingCart', {orders}))
-   }
+    deleteFromCart: function (req, res) {
+        orderApi.deleteOrderById(req.params.id)
+            .then(() => orderApi.getShoppingCart())
+            .then((orders) => res.render('customer/shoppingCart', { orders }))
+    },
+    submitOrders: function (req, res) {
+        orderApi.moveShoppingCartItemsToProcessing()
+            .then(() => orderApi.getSubmittedOrders())
+            .then(() => res.render('customer/orders'))
+    }
 }
 
 module.exports = customerController
