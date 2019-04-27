@@ -8,6 +8,8 @@ router.put('/cakes/:id', bakerController.updateCake)
 router.delete('/cakes/:id', bakerController.deleteCake)
 router.get('/cakes/update/:id', bakerController.viewCakeUpdatePage)
 
-
+router.get('/orders', bakerController.viewActiveOrders)
+router.put('/orders/:id', bakerController.updateOrder)
+router.delete('/orders/:id', bakerController.deletePickedUpOrders)
 
 module.exports = router

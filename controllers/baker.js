@@ -25,7 +25,21 @@ const bakerController = {
         cakeApi.updateCakeById(req.params.id, req.body)
             .then(() => cakeApi.getAllCakes())
             .then((cakes) => res.render('baker/cakeList', { cakes }))
-    }
+    },
+    viewActiveOrders: function (req, res) {
+        orderApi.getSubmittedOrders()
+        .then((orders) => res.render('baker/bakerOrders', { orders }))
+    },
+    updateOrder: function (req, res) {
+        orderApi.updateOrderById(req.params.id, req.body)
+            .then(() => orderApi.getSubmittedOrders())
+            .then((orders) => res.render('baker/bakerOrders', { orders }))
+    },
+    deletePickedUpOrders: function (req, res) {
+        orderApi.deleteOrderById(req.params.id)
+            .then(() => orderApi.getSubmittedOrders())
+            .then((orders) => res.render('baker/bakerOrders', { orders }))
+    },
 }
 
 module.exports = bakerController

@@ -4,7 +4,7 @@
 <h3>Name: {{cakeId.name}}</h3>
 <h4>Price per Cake: ${{cakeId.price}}</h4>
 <h4>Quantity: {{quantity}}</h4>
-<h4>Pick Up Date and Time: {{pickUp}}</h4>
+<h4>Pick Up Date and Time: <input type="datetime-local" readonly="true" value="{{pickUp}}"></h4>
 <h4>Status: {{status}}</h4>
 <h4>Comments: <p>{{comments}}</p></h4>
 {{/each}}

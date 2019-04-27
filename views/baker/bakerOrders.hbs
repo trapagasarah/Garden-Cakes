@@ -1,0 +1,13 @@
+{{#each orders}}
+<img src="{{cakeId.image}}" alt="">
+<h2>Name: {{cakeId.name}}</h2>
+<h2>Quantity: {{quantity}}</h2>
+<form action="/baker/orders/{{_id}}?_method=PUT" method="POST">
+    <label for="status">Status: </label>
+    <input type="text" name="status" value="{{status}}">
+    <input type="submit" name="Update Status">
+</form>
+<form action="/baker/orders/{{_id}}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Order">
+</form>
+{{/each}}

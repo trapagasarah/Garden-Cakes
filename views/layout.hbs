@@ -1,14 +1,36 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Garden Cakes</title>
-    <link href='https://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 
+
+
 <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div></div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Account
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="/shoppingCart">
+                    Shopping Cart
+                </a>
+                <a class="navbar-item" href="/orders">
+                    Orders
+                </a>
+            </div>
+        </div>
+    </nav>
     <h1>Garden Cakes</h1>
     <h2>Cakes Inspired By Nature</h2>
     {{{ body }}}
