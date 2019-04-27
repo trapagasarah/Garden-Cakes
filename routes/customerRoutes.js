@@ -8,4 +8,6 @@ router.post('/shoppingCart', customerController.addToCart)
 router.put('/shoppingCart/:id',customerController.updateCart)
 router.delete('/shoppingCart/:id',customerController.deleteFromCart)
 router.post('/shoppingCart/submit', customerController.submitOrders)
+router.get('/shoppingCart', customerController.viewShoppingCart)
+router.get('/orders', customerController.viewOrders)
 module.exports = router

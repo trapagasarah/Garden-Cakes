@@ -28,6 +28,14 @@ const customerController = {
         orderApi.moveShoppingCartItemsToProcessing()
             .then(() => orderApi.getSubmittedOrders())
             .then((orders) => res.render('customer/orders', { orders }))
+    },
+    viewShoppingCart: function (req, res) {
+        orderApi.getShoppingCart()
+            .then((orders) => res.render('customer/shoppingCart', { orders }))
+    },
+    viewOrders: function (req, res) {
+        orderApi.getSubmittedOrders()
+            .then((orders) => res.render('customer/orders', { orders }))
     }
 }
 
