@@ -3,5 +3,18 @@
 <img src="{{image}}" alt="">
 <h3>Name: {{name}}</h3>
 <h3>Price: ${{price}}</h3>
-<h3>Description: <p>{{description}}</p></h3>
+<h3>Description: <p>{{description}}</p>
+</h3>
 {{/each}}
+
+<form action="/baker/cakes" method="POST">
+    <label for="name">Name: </label>
+    <input type="text" name="name">
+    <label for="price">Price: </label>
+    <input type="number" name="price">
+    <label for="image">Image: </label>
+    <input type="text" name="image">
+    <label for="description">Description: </label>
+    <input type="text" name="description">
+    <input type="submit" value="Make Cake">
+</form>
