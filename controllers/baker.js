@@ -2,14 +2,29 @@ const cakeApi = require('../APIs/cakeApi');
 const orderApi = require('../APIs/orderApi');
 
 const bakerController = {
-    makeCake: function(req, res){
+    makeCake: function (req, res) {
         cakeApi.createNewCake(req.body)
-        .then(() => cakeApi.getAllCakes())
-        .then((cakes) => res.render('baker/cakeEdit', { cakes }))
+            .then(() => cakeApi.getAllCakes())
+            .then((cakes) => res.render('baker/cakeList', { cakes }))
     },
-    viewCakeEditPage: function(req, res){
+    viewBakerPage: function (req, res) {
         cakeApi.getAllCakes()
-        .then ((cakes) =>  res.render('baker/cakeEdit', { cakes }))
+            .then((cakes) => res.render('baker/cakeList', { cakes }))
+    },
+
+    viewCakeUpdatePage: function (req, res) {
+        cakeApi.getCakeById(req.params.id)
+        .then((cake) => res.render('baker/updateCake', { cake }))
+    },
+    deleteCake: function (req, res) {
+        cakeApi.deleteCakeById(req.params.id)
+            .then(() => cakeApi.getAllCakes())
+            .then((cakes) => res.render('baker/cakeList', { cakes }))
+    },
+    updateCake: function (req, res) {
+        cakeApi.updateCakeById(req.params.id, req.body)
+            .then(() => cakeApi.getAllCakes())
+            .then((cakes) => res.render('baker/cakeList', { cakes }))
     }
 }
 

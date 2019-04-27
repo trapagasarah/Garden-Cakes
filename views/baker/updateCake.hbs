@@ -1,0 +1,11 @@
+<form action="/baker/cakes/{{cake._id}}?_method=PUT" method="POST">
+    <label for="name">Name: </label>
+    <input type="text" name="name" value="{{cake.name}}">
+    <label for="price">Price: </label>
+    <input type="number" name="price" value="{{cake.price}}">
+    <label for="image">Image: </label>
+    <input type="text" name="image" value="{{cake.image}}">
+    <label for="description">Description: </label>
+    <textarea name="description" cols="30" rows="10">{{cake.description}}</textarea>
+    <input type="submit" value="Save Cake">
+</form>
