@@ -27,7 +27,7 @@ const customerController = {
     submitOrders: function (req, res) {
         orderApi.moveShoppingCartItemsToProcessing()
             .then(() => orderApi.getSubmittedOrders())
-            .then(() => res.render('customer/orders'))
+            .then((orders) => res.render('customer/orders', { orders }))
     }
 }
 
