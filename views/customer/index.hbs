@@ -4,4 +4,14 @@
     <a href="/cakes/{{_id}}">{{name}}</a>
     <p>${{price}}</p>
     {{/each}}
+
+    <form action="/" method="POST">
+    <label for="customerName">Name: </label>
+    <input type="text" name="customerName">
+    <label for="customerEmail">Email: </label>
+    <input type="text" name="customerEmail">
+    <label for="idea">Idea: </label>
+    <textarea name="idea" cols="30" rows="10"></textarea>
+    <input type="submit" value="Save Suggestion">
+    </form>
 </main>

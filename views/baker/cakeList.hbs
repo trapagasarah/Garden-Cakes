@@ -6,10 +6,10 @@
 <h3>Description: <p>{{description}}</p>
 </h3>
 <form action="/baker/cakes/update/{{_id}}" method="GET">
-<input type="submit" value="Update Cake">
+    <input type="submit" value="Update Cake">
 </form>
 <form action="/baker/cakes/{{_id}}?_method=DELETE" method="POST">
-<input type="submit" value="Delete Cake">
+    <input type="submit" value="Delete Cake">
 </form>
 {{/each}}
 
@@ -24,3 +24,13 @@
     <textarea name="description" cols="30" rows="10"></textarea>
     <input type="submit" value="Make Cake">
 </form>
+
+{{#each suggestions}}
+<h2>Suggestions</h2>
+<h3>Name: {{customerName}}</h3>
+<h3>Email: {{customerEmail}}</h3>
+<h3>Idea: <p>{{idea}}</p></h3>
+<form action="/baker/cakes/suggestions/{{_id}}?_method=DELETE" method="POST">
+<input type="submit" value="Delete Suggestion">
+</form>
+{{/each}}

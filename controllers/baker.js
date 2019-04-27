@@ -1,5 +1,6 @@
 const cakeApi = require('../APIs/cakeApi');
 const orderApi = require('../APIs/orderApi');
+const suggestionApi = require('../APIs/suggestionApi');
 
 const bakerController = {
     makeCake: function (req, res) {
@@ -9,12 +10,21 @@ const bakerController = {
     },
     viewBakerPage: function (req, res) {
         cakeApi.getAllCakes()
-            .then((cakes) => res.render('baker/cakeList', { cakes }))
+            .then((cakes) => suggestionApi.getAllSuggestions()
+                .then((suggestions) => res.render('baker/cakeList', { cakes, suggestions }))
+            )
+    },
+    deleteSuggestion: function (req, res) {
+        suggestionApi.deleteSuggestionById(req.params.id)
+            .then(() => cakeApi.getAllCakes())
+            .then((cakes) => suggestionApi.getAllSuggestions()
+                .then((suggestions) =>  res.render('baker/cakeList', { cakes, suggestions }))
+            )
     },
 
     viewCakeUpdatePage: function (req, res) {
         cakeApi.getCakeById(req.params.id)
-        .then((cake) => res.render('baker/updateCake', { cake }))
+            .then((cake) => res.render('baker/updateCake', { cake }))
     },
     deleteCake: function (req, res) {
         cakeApi.deleteCakeById(req.params.id)
@@ -28,7 +38,7 @@ const bakerController = {
     },
     viewActiveOrders: function (req, res) {
         orderApi.getSubmittedOrders()
-        .then((orders) => res.render('baker/bakerOrders', { orders }))
+            .then((orders) => res.render('baker/bakerOrders', { orders }))
     },
     updateOrder: function (req, res) {
         orderApi.updateOrderById(req.params.id, req.body)

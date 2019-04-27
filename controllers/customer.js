@@ -1,5 +1,7 @@
 const cakeApi = require('../APIs/cakeApi');
 const orderApi = require('../APIs/orderApi');
+const suggestionApi = require('../APIs/suggestionApi');
+
 const customerController = {
     index: function (req, res) {
         cakeApi.getAllCakes()
@@ -36,6 +38,11 @@ const customerController = {
     viewOrders: function (req, res) {
         orderApi.getSubmittedOrders()
             .then((orders) => res.render('customer/orders', { orders }))
+    },
+    makeASuggestion: function (req, res) {
+        suggestionApi.createNewSuggestion(req.body)
+        .then(() => cakeApi.getAllCakes())
+        .then((cakes) => res.render('customer/index', {cakes}))
     }
 }
 

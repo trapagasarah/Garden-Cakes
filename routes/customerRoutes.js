@@ -10,4 +10,5 @@ router.delete('/shoppingCart/:id',customerController.deleteFromCart)
 router.post('/shoppingCart/submit', customerController.submitOrders)
 router.get('/shoppingCart', customerController.viewShoppingCart)
 router.get('/orders', customerController.viewOrders)
+router.post('/',customerController.makeASuggestion)
 module.exports = router
