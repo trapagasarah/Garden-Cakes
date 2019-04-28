@@ -8,11 +8,10 @@ function goToShoppingCart (req, res) {
                 const sum = orders.map(order => order.cakeId)
                 .filter(cake => cake != null)
                 .map(cake => cake.price)
-                .reduce((total, value) => total + value)
+                .reduce((total, value) => total + value, 0)
                 res.render('customer/shoppingCart', { orders, sum })
             })
 }
-
 const customerController = {
     index: function (req, res) {
         cakeApi.getAllCakes()
