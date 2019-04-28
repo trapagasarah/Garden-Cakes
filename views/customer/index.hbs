@@ -1,18 +1,40 @@
 <main>
     {{#each cakes}}
-    <img src="{{image}}" alt="">
-    <a href="/cakes/{{_id}}">{{name}}</a>
-    <p>${{price}}</p>
+    <div class="card has-shadow">
+        <div class="card-image">
+            <figure class="image is-square">
+                <img src="{{image}}" alt="">
+            </figure>
+        </div>
+        <div class="content">
+            <a class="cake-name" href="/cakes/{{_id}}">{{name}}</a>
+            <p>${{price}}</p>
+        </div>
+    </div>
     {{/each}}
 
-    <h2>Make a Cake Suggestion</h2>
-    <form action="/" method="POST">
-    <label for="customerName">Name: </label>
-    <input type="text" name="customerName">
-    <label for="customerEmail">Email: </label>
-    <input type="text" name="customerEmail">
-    <label for="idea">Idea: </label>
-    <textarea name="idea" cols="30" rows="10"></textarea>
-    <input type="submit" value="Save Suggestion">
-    </form>
+    <div class="card">
+        <div class="card-header">
+            <h2>Make a Cake Suggestion</h2>
+        </div>
+        <div class="content" id="suggestion-box">
+            <form action="/" method="POST" class="suggestion-form">
+                <div>
+                    <label for="customerName">Name</label>
+                    <input class="input is-large is-rounded is-warning" type="text" name="customerName">
+                </div>
+                <div>
+                    <label for="customerEmail">Email</label>
+                    <input class="input is-large is-rounded is-warning" type="text" name="customerEmail">
+                </div>
+                <div>
+                    <label for="idea">Idea</label>
+                    <textarea class="textarea is-medium is-warning" name="idea" cols="30" rows="4"></textarea>
+                </div>
+                <div class="submit">
+                    <input class="button is-warning" type="submit" value="Save Suggestion">
+                </div>
+            </form>
+        </div>
+    </div>
 </main>
