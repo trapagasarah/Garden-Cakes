@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "css-build": "node-sass --omit-source-map-url public/sass/mystyles.scss public/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "express": "^4.16.4",
     "hbs": "^4.0.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.5.3"
+    "mongoose": "^5.5.3",
+    "node-sass": "^4.12.0"
   }
 }
