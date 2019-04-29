@@ -55,11 +55,12 @@ h2{
     font-size: 4em;
     color:rgba(143, 169, 78); 
 }
-h3{
+h3, .order-status{
     color:rgba(143, 169, 78);
     font-size: 1.5em;
     line-height: 2em;
 }
+
 .cake-price h3{
     font-size: 3em;
     color: rgba(253, 242, 143);   
