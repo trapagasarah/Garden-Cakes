@@ -7,6 +7,7 @@ body{
     font-weight: 700;
     line-height: 3.2em;
     align-items: center;
+    min-height: 60em;
 }
 header{
     display: flex;
@@ -22,38 +23,65 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 100%
 }
-nav{
-    font-size: .5em;
-}
+
 img{
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
 }
+.order-image{
+    border-radius: .5em;
+    margin-top: .5em;
+}
 h1{
+    font-size: 5em;
+    margin-top: 1em;
+    color: rgba(253, 242, 143);
+}
+header h1{
     font-size: 8em;
-    
-    
+    margin-top: 0;
     text-decoration: underline;
     color:rgba(143, 169, 78);
-    -webkit-text-stroke: 1px white;
-    
 }
+
 h1, h2{
     font-weight: 700; 
-    /* margin-bottom: .5em; */
     line-height: 1em;
-    color:rgba(143, 169, 78);
-    -webkit-text-stroke: 1px white;
-    
+    -webkit-text-stroke: 1px white;  
 }
-h2{
-    
+h2{ 
     font-size: 4em;
+    color:rgba(143, 169, 78); 
 }
-a, p{
+h3{
+    color:rgba(143, 169, 78);
+    font-size: 1.5em;
+    line-height: 2em;
+}
+.cake-price h3{
+    font-size: 3em;
+    color: rgba(253, 242, 143);   
+}
+
+.cake-name{
     color: rgba(143, 169, 78);
+    font-size: 3em;
 }
+p{
+    color: rgba(143, 169, 78);
+    font-size: 1.5em;
+    text-align: justify;
+    line-height: 1em;
+    margin: 0;
+}
+.cake-price{
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+}
+
 a:hover{
     color: rgba(253, 242, 143)   
 }
@@ -63,40 +91,63 @@ a:hover{
     background-color: rgba(69, 79, 89);
     width: 100vw;
 }
-.navbar-item{
-    font-size: 4em;
+.navbar{
+    font-size: 1em;
 }
-.navbar-dropdown .navbar-item{
+.navbar-item{
     font-size: 2em;
 }
+
+
 .card{
-    width: 40%;
+    width: 35%;
     margin: 2em 0;
     border-radius: 1.5em;
     border: .5em solid rgba(143, 169, 78, .6);
 }
-.content{
-    display: flex;
-    justify-content: space-between;
-    font-size: 3em;
-    margin: 0 .3em;
+.order-cards{
+    width: 23em;
+    margin: 2em 2em;
 }
-#suggestion-box{
+.form{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 0em;
+}
+.cake-list    {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1em;
+}
+.orders{
+    margin:0 1em 0 0;
 }
 input{
     font-family: 'Amatic SC', cursive;
     font-size: 10em;
     padding: 0; 
-    
+    margin-bottom: .8em;
+}
+textarea{
+    font-family: 'Amatic SC', cursive;
 }
 label{
-    font-size: .8em;
-    margin: 0 auto;
     color:rgba(143, 169, 78);
-    line-height: 0;
+    font-size: 2em;
+    margin-top: 1em;
+}
+.shopping-cart{
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 1em;
+}
+.total-cost{
+    width: 20em;
+    height: 12em;
+    display: flex;
+    flex-direction: column;
 }
 .card-header{
     display: flex;
@@ -104,6 +155,7 @@ label{
     background-color: rgba(253, 242, 143, .8);
     border-top-left-radius: .8em;
     border-top-right-radius: .8em;
+    margin-bottom: 1em;
 }
 .card-header h2{
     margin: .2em 0;
@@ -111,10 +163,11 @@ label{
 .suggestion-form{
     width: 75%;
 }
+
 .submit{
     display: flex;
     justify-content: flex-end;
-    margin: .2em 0;
+    margin-top: .4em;
 }
 
     

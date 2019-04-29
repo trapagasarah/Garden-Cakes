@@ -1,29 +1,55 @@
 <h1>Shopping Cart</h1>
-{{#each orders}}
-<img src="{{cakeId.image}}" alt="">
-<br>
-<h3>Name: {{cakeId.name}}</h3>
-<h3>Price per Cake: ${{cakeId.price}}</h3>
-<form action="/shoppingCart/{{_id}}?_method=PUT" method="POST">
-    <label for="quantity">Quantity: </label>
-    <input type="number" name="quantity" value="{{quantity}}">
-    <label for="pickUp">Pick Up Date and Time: </label>
-    <input type="datetime-local" name="pickUp" value="{{pickUp}}">
-    <label for="comment">Comments: </label>
-    <textarea name="comment" cols="30" rows="10">{{comments}}</textarea>
-    <input type="hidden" name="status" value="{{status}}">
-    <input type="hidden" name="cakeId" value="{{cakeId._id}}">
-    <input type="submit" value="Save Changes">
-</form>
-<form action="/shoppingCart/{{_id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete">
-</form>
-{{/each}}
-<h2>Total cost: ${{sum}}</h2>
+<main>
+    {{#each orders}}
+    <div class="order-cards card">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                    <figure class="image is-96x96">
+                        <img class="order-image" src="{{cakeId.image}}">
+                    </figure>
+                </div>
 
-<form action="/" method="GET">
-<input type="submit" value="Continue Shopping">
-</form>
-<form action="/shoppingCart/submit" method="POST">
-    <input type="submit" value="Submit Order">
-</form>
+                <div class="media-content media-right">
+                    <h3>Name: {{cakeId.name}}</h3>
+                    <h3>Price per Cake: ${{cakeId.price}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="form content">
+            <form class="suggestion-form" action="/shoppingCart/{{_id}}?_method=PUT" method="POST">
+                <label class="shopping-cart" for="quantity">Quantity: </label>
+                <input class="input shopping-cart is-medium is-rounded is-warning" type="number" name="quantity"
+                    value="{{quantity}}">
+                <label class="shopping-cart" for="pickUp">Pick Up Date and Time: </label>
+                <input class="input is-medium is-rounded is-warning" type="datetime-local" name="pickUp"
+                    value="{{pickUp}}">
+                <label class="shopping-cart" for="comment">Comments: </label>
+                <textarea class="textarea is-small is-warning" name="comment" cols="30" rows="3">{{comments}}</textarea>
+                <input type="hidden" name="status" value="{{status}}">
+                <input type="hidden" name="cakeId" value="{{cakeId._id}}">
+                <div class="submit">
+                    <input class="button" type="submit" value="Save Changes">
+                </div>
+            </form>
+            <form action="/shoppingCart/{{_id}}?_method=DELETE" method="POST">
+                <div class="submit">
+                    <input class="button" type="submit" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</main>
+
+
+<div class="total-cost card">
+    <h2>Total cost: ${{sum}}</h2>
+
+    <form action="/" method="GET">
+        <input class="button" type="submit" value="Continue Shopping">
+    </form>
+    <form action="/shoppingCart/submit" method="POST">
+        <input class="button" type="submit" value="Submit Order">
+    </form>
+</div>

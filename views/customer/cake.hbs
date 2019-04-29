@@ -1,21 +1,44 @@
 <h1>{{cake.name}}</h1>
-<img src="{{cake.image}}" alt="">
-<p>${{cake.price}}</p>
-<p>{{cake.description}}</p>
-<form id="addToCartForm" action="/shoppingCart" method="POST">
-    <label for="quantity">Quantity: </label>
-    <input type="number" name="quantity" value="1">
-    <label for="pickUp">Pick Up Date and Time: </label>
-    <input type="datetime-local" name="pickUp">
-    <label for="comment">Comments: </label>
-    <textarea name="comments" id="" cols="30" rows="10" form="addToCartForm"></textarea>
-    <input type="hidden" name="status" value="Cart">
-    <input type="hidden" name="cakeId" value="{{cake._id}}">
-    <input type="submit" value="Add to Cart">
-</form>
-<h1>Leave a Review</h1>
-<form action="/review" method="POST"></form>
-{{#each cake.reviews}}
-    <h3>{{customerName}}: {{rating}}</h3>
-    <p>{{explanation}}</p>
-{{/each}}
+<main>
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-square">
+                <img src="{{cake.image}}" alt="">
+            </figure>
+        </div>
+        <div class="cake-list card-content">
+            <p>{{cake.description}}</p>
+            <div class="cake-price">
+                <h3>${{cake.price}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Order Here</h2>
+        </div>
+        <div class="form card-content">
+            <form id="addToCartForm" action="/shoppingCart" method="POST" class="suggestion-form">
+                {{!-- <div class="form"> --}}
+                <label for="quantity">Quantity</label>
+                <input class="input is-large is-rounded is-warning" type="number" name="quantity" value="1">
+                {{!-- </div> --}}
+                {{!-- <div class="form"> --}}
+                <label for="pickUp">Pick Up Date and Time</label>
+                <input class="input is-large is-rounded is-warning" type="datetime-local" name="pickUp">
+                {{!-- </div> --}}
+                {{!-- <div class="form"> --}}
+                <label for="comment">Comments</label>
+                <textarea class="textarea is-medium is-warning" name="comments" id="" cols="30" rows="3"
+                    form="addToCartForm"></textarea>
+                {{!-- </div> --}}
+                <input type="hidden" name="status" value="Cart">
+                <input type="hidden" name="cakeId" value="{{cake._id}}">
+                <div class="submit">
+                    <input class="button" type="submit" value="Add to Cart">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
