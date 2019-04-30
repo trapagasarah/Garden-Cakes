@@ -30,9 +30,13 @@ img{
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
 }
-.order-image{
+.cart-image{
     border-radius: .5em;
     margin-top: .5em;
+}
+.order-image{
+    border-radius: .5em;
+    margin-top: .8em;
 }
 h1{
     font-size: 5em;
@@ -162,7 +166,7 @@ label{
     margin: .2em 0;
 }
 .suggestion-form{
-    width: 75%;
+    width: 80%;
 }
 
 .submit{

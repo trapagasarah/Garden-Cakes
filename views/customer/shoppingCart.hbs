@@ -6,7 +6,7 @@
             <div class="media">
                 <div class="media-left">
                     <figure class="image is-96x96">
-                        <img class="order-image" src="{{cakeId.image}}">
+                        <img class="cart-image" src="{{cakeId.image}}">
                     </figure>
                 </div>
 
@@ -15,6 +15,7 @@
                     <h3>Price per Cake: ${{cakeId.price}}</h3>
                 </div>
             </div>
+
         </div>
         <div class="form content">
             <form class="suggestion-form" action="/shoppingCart/{{_id}}?_method=PUT" method="POST">
@@ -34,7 +35,7 @@
             </form>
             <form action="/shoppingCart/{{_id}}?_method=DELETE" method="POST">
                 <div class="submit">
-                    <input class="button" type="submit" value="Delete">
+                    <input class="button" type="submit" >
                 </div>
             </form>
         </div>
