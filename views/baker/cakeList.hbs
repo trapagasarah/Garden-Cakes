@@ -1,37 +1,58 @@
 <h2>Cakes</h2>
-{{#each cakes}}
-<img src="{{image}}">
-<h3>Name: {{name}}</h3>
-<h3>Price: ${{price}}</h3>
-<h3>Description: <p>{{description}}</p>
-</h3>
-<form action="/baker/cakes/update/{{_id}}" method="GET">
-    <input type="submit" value="Update Cake">
-</form>
-<form action="/baker/cakes/{{_id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete Cake">
-</form>
-{{/each}}
+<main>
+    {{#each cakes}}
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-square">
+                <img src="{{image}}">
+            </figure>
+        </div>
+        <div class="form card-content">
+            <h3>Name: {{name}}</h3>
+            <h3>Price: ${{price}}</h3>
+            <h3>Description: <textarea class="textarea is-medium is-warning" name="comments" id="" cols="30" rows="3"
+                    form="addToCartForm">{{description}}</textarea></h3>
+            <form class="suggestion-form" action="/baker/cakes/update/{{_id}}" method="GET">
+                <input class="input is-medium is-rounded is-warning" type="submit" value="Update Cake">
+            </form>
+            <form class="suggestion-form" action="/baker/cakes/{{_id}}?_method=DELETE" method="POST">
+                <input class="input is-medium is-rounded is-warning" type="submit" value="Delete Cake">
+            </form>
+        </div>
+    </div>
+    {{/each}}
 
-<form action="/baker/cakes" method="POST">
-    <label for="name">Name: </label>
-    <input type="text" name="name">
-    <label for="price">Price: </label>
-    <input type="number" name="price">
-    <label for="image">Image: </label>
-    <input type="text" name="image">
-    <label for="description">Description: </label>
-    <textarea name="description" cols="30" rows="10"></textarea>
-    <input type="submit" value="Make Cake">
-</form>
+    <div class="card form">
+        <form action="/baker/cakes" method="POST" class="suggestion-form">
+            <label class="shopping-cart" for="name">Name: </label>
+            <input class="input is-medium is-rounded is-warning" type="text" name="name">
+            <label class="shopping-cart" for="price">Price: </label>
+            <input class="input is-medium is-rounded is-warning" type="number" name="price">
+            <label class="shopping-cart" for="image">Image: </label>
+            <input class="input is-medium is-rounded  is-warning" type="text" name="image">
+            <label class="shopping-cart" for="description">Description: </label>
+            <textarea class="textarea is-medium is-warning" name="description" cols="30" rows="5"></textarea>
+            <div class="submit">
+                <input class="button" type="submit" value="Make Cake">
+            </div>
+        </form>
+    </div>
+</main>
 
-{{#each suggestions}}
-<h2>Suggestions</h2>
-<h3>Name: {{customerName}}</h3>
-<h3>Email: {{customerEmail}}</h3>
-<h3>Idea: <p>{{idea}}</p>
-</h3>
-<form action="/baker/cakes/suggestions/{{_id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete Suggestion">
-</form>
-{{/each}}
+
+    <h2>Suggestions</h2>
+    <main>
+    {{#each suggestions}}
+    <div class="card">
+        <div class="form card-content">
+            <h3>Name: {{customerName}}</h3>
+            <h3>Email: {{customerEmail}}</h3>
+            <h3>Idea: <textarea class="textarea is-medium is-warning" name="idea" cols="30" rows="3" readonly="true">{{idea}}</textarea>
+            </h3>
+            <form class="suggestion-form" action="/baker/cakes/suggestions/{{_id}}?_method=DELETE" method="POST">
+                <input class="button" type="submit" value="Delete Suggestion">
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</main>

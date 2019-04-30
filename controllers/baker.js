@@ -1,25 +1,23 @@
 const cakeApi = require('../APIs/cakeApi');
 const orderApi = require('../APIs/orderApi');
 const suggestionApi = require('../APIs/suggestionApi');
-
+ 
+const bakerCakeView = function(req, res){
+    cakeApi.getAllCakes()
+    .then((cakes) => suggestionApi.getAllSuggestions()
+        .then((suggestions) => res.render('baker/cakeList', { cakes, suggestions }))
+    )
+}
 const bakerController = {
     makeCake: function (req, res) {
         cakeApi.createNewCake(req.body)
-            .then(() => cakeApi.getAllCakes())
-            .then((cakes) => res.render('baker/cakeList', { cakes }))
+            .then(() => bakerCakeView(req, res))
     },
-    viewBakerPage: function (req, res) {
-        cakeApi.getAllCakes()
-            .then((cakes) => suggestionApi.getAllSuggestions()
-                .then((suggestions) => res.render('baker/cakeList', { cakes, suggestions }))
-            )
-    },
+    viewBakerPage: bakerCakeView,
+
     deleteSuggestion: function (req, res) {
         suggestionApi.deleteSuggestionById(req.params.id)
-            .then(() => cakeApi.getAllCakes())
-            .then((cakes) => suggestionApi.getAllSuggestions()
-                .then((suggestions) =>  res.render('baker/cakeList', { cakes, suggestions }))
-            )
+            .then(() => bakerCakeView(req, res))
     },
 
     viewCakeUpdatePage: function (req, res) {
@@ -28,13 +26,11 @@ const bakerController = {
     },
     deleteCake: function (req, res) {
         cakeApi.deleteCakeById(req.params.id)
-            .then(() => cakeApi.getAllCakes())
-            .then((cakes) => res.render('baker/cakeList', { cakes }))
+            .then(() => bakerCakeView(req, res))
     },
     updateCake: function (req, res) {
         cakeApi.updateCakeById(req.params.id, req.body)
-            .then(() => cakeApi.getAllCakes())
-            .then((cakes) => res.render('baker/cakeList', { cakes }))
+            .then(() => bakerCakeView(req, res))
     },
     viewActiveOrders: function (req, res) {
         orderApi.getSubmittedOrders()
