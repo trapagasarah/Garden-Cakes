@@ -1,3 +1,3 @@
 # Garden-Cakes
 ## Deployed App
-[link] https://rocky-hamlet-87349.herokuapp.com/
+- [Deployed App](https://rocky-hamlet-87349.herokuapp.com/)
