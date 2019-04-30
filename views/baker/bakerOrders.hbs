@@ -1,7 +1,9 @@
+<h1>Orders To Bake</h1>
 <main>
     {{#each orders}}
     <div class="order-cards card">
-        <div class="card-content">
+        {{!-- <div class="card-content"> --}}
+        <div class="shopping-header card-header">
             <div class="media">
                 <div class="media-left">
                     <figure class="image is-96x96">
@@ -10,23 +12,28 @@
                 </div>
                 <div class="orders media-content media-right">
                     <h3>Name: {{cakeId.name}}</h3>
-                    <h3>Quantity: {{quantity}}</h3>
-                    <form action="/baker/orders/{{_id}}?_method=PUT" method="POST">
-                        <label class="order-status" for="status">Status</label>
-                        <input class="input is-medium is-rounded is-warning" type="text" name="status"
-                            value="{{status}}">
-                        <div class="submit">
-                            <input class="button" type="submit" name="Update Status">
-                        </div>
-                    </form>
-                    <form action="/baker/orders/{{_id}}?_method=DELETE" method="POST">
-                        <div class="submit">
-                        <input class="button" type="submit" value="Delete Order">
-                        </div>
-                    </form>
-                    </h3>
                 </div>
             </div>
+        </div>
+        <div class="form card-content">
+            <div class="suggestion-form">
+                <h3>Quantity: {{quantity}}</h3>
+                <h3>Pick Up Date and Time: <input class="input is-rounded is-medium is-warning" type="datetime-local"
+                        readonly="true" value="{{pickUp}}"></h3>
+                <h3>Comments: <textarea class="textarea is-medium is-warning" name="comment" readonly="true" cols="30"
+                        rows="3">{{comments}}</textarea></h3>
+                <form action="/baker/orders/{{_id}}?_method=PUT" method="POST">
+                    <label class="order-status" for="status">Status</label>
+                    <input class="input is-medium is-rounded is-warning" type="text" name="status" value="{{status}}">
+            </div>
+            <div class="submit-order suggestion-form">
+                <input class="button is-rounded" type="submit" name="Update Status">
+                </form>
+                <form action="/baker/orders/{{_id}}?_method=DELETE" method="POST">
+                    <input id="delete" class="button is-rounded" type="submit" value="Delete Order">
+                </form>
+            </div>
+            {{!-- </div> --}}
         </div>
     </div>
     {{/each}}

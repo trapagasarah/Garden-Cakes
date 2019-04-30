@@ -7,7 +7,7 @@ body{
     font-weight: 700;
     line-height: 3.2em;
     align-items: center;
-    min-height: 60em;
+    min-height: 60em; 
 }
 header{
     display: flex;
@@ -38,7 +38,9 @@ img{
 .order-image{
     border-radius: .5em;
     margin-top: .8em;
+    
 }
+
 h1{
     font-size: 5em;
     margin-top: 1em;
@@ -120,7 +122,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0em;
+    line-height: 1.5em;
 }
 .cake-list    {
     display: flex;
@@ -154,6 +156,8 @@ label{
     height: 12em;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .card-header{
     display: flex;
@@ -161,13 +165,32 @@ label{
     background-color: rgba(253, 242, 143, .8);
     border-top-left-radius: .8em;
     border-top-right-radius: .8em;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+    padding: 1em 0 3em 0;
 }
-.card-header h2{
-    margin: .2em 0;
+.card-header{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(253, 242, 143, .8);
+    border-top-left-radius: .8em;
+    border-top-right-radius: .8em;
+    margin-bottom: 1.5em;
+    padding: 1em 0 1em 0;
 }
+.shopping-header{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(253, 242, 143, .8);
+    border-top-left-radius: .8em;
+    border-top-right-radius: .8em;
+    margin-bottom: 1.5em;
+    padding: 1em 0 3em 0;
+}
+/* .card-header h2{
+    margin: .5em 0;
+} */
 .suggestion-form{
-    width: 80%;
+    width: 85%;
 }
 
 .submit{
@@ -175,6 +198,17 @@ label{
     justify-content: flex-end;
     margin-top: .4em;
 }
-
+.card-content{
+    padding: .3em 1.5em .5em 1.5em;
+}
+.submit-order{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1em;
+}
+.order-info{
+    margin-bottom: 1.5em;
+}
     
 

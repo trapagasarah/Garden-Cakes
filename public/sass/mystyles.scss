@@ -8,6 +8,7 @@ $green: rgb(143, 169, 78);
 $dark-green: rgb(85,102,56);
 $yellow: rgb(253, 242, 143);
 $dark-grey: rgb(69, 79, 89);
+$red: rgb(204, 108, 101);
 $brown: #757763;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
@@ -22,6 +23,7 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 $button-color: $dark-green;
 $button-background-color: $yellow;
+
 
 
 // Update some of Bulma's component variables
@@ -46,4 +48,12 @@ $input-shadow: none;
 
 .content h3 {
     color: $green;
+}
+#delete{
+    background-color: $red;
+    color: $yellow;
+}
+#submit-order{
+    background-color: $green;
+    color: $yellow; 
 }

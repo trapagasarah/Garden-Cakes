@@ -1,7 +1,9 @@
+<h1>Orders</h1>
 <main>
     {{#each orders}}
     <div class="order-cards card">
-        <div class="card-content">
+        {{!-- <div class="card-content"> --}}
+        <div class="shopping-header card-header">
             <div class="media">
                 <div class="media-left">
                     <figure class="image is-96x96">
@@ -12,20 +14,24 @@
                 <div class="media-content media-right">
                     <h3>Name: {{cakeId.name}}</h3>
                     <h3>Price per Cake: ${{cakeId.price}}</h3>
-                    <h3>Quantity: {{quantity}}</h3>
                 </div>
             </div>
 
-            <div  class="form content">
-                <div class="suggestion-form">
-                    <h3 class="shopping-cart">Pick Up Date and Time: <input class="input is-rounded is-medium is-warning"
-                            type="datetime-local" readonly="true" value="{{pickUp}}"></h3>
-                    <h3 class="shopping-cart">Status: {{status}}</h3>
-                    <h3 class="shopping-cart">Comments: <textarea class="textarea is-medium is-warning" name="comment" readonly="true"
-                            cols="30" rows="3">{{comments}}</textarea></h3>
-                </div>
+        </div>
+
+
+        <div class="form card-content">
+            <div class="order-info suggestion-form">
+                <h3>Quantity: {{quantity}}</h3>
+                <h3>Status: {{status}}</h3>
+                <h3>Pick Up Date and Time: <input class="input is-rounded is-medium is-warning"
+                        type="datetime-local" readonly="true" value="{{pickUp}}"></h3>
+                <h3>Comments: <textarea class="textarea is-medium is-warning" name="comment"
+                        readonly="true" cols="30" rows="3">{{comments}}</textarea></h3>
             </div>
         </div>
+        {{!-- </div> --}}
+    </div>
     </div>
     {{/each}}
 </main>
