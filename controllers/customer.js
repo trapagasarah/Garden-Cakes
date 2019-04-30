@@ -2,15 +2,19 @@ const cakeApi = require('../APIs/cakeApi');
 const orderApi = require('../APIs/orderApi');
 const suggestionApi = require('../APIs/suggestionApi');
 
-function goToShoppingCart (req, res) {
+function goToShoppingCart(req, res) {
     orderApi.getShoppingCart()
-            .then((orders) => {
-                const sum = orders.map(order => order.cakeId)
-                .filter(cake => cake != null)
-                .map(cake => cake.price)
-                .reduce((total, value) => total + value, 0)
-                res.render('customer/shoppingCart', { orders, sum })
+        .then((orders) => {
+            const sum = orders.map(order => {
+                if (order.cakeId != null) {
+                    return order.cakeId.price * order.quantity
+                } else {
+                    return 0
+                }
             })
+                .reduce((total, value) => total + value, 0)
+            res.render('customer/shoppingCart', { orders, sum })
+        })
 }
 const customerController = {
     index: function (req, res) {
@@ -47,8 +51,8 @@ const customerController = {
     },
     makeASuggestion: function (req, res) {
         suggestionApi.createNewSuggestion(req.body)
-        .then(() => cakeApi.getAllCakes())
-        .then((cakes) => res.render('customer/index', {cakes}))
+            .then(() => cakeApi.getAllCakes())
+            .then((cakes) => res.render('customer/index', { cakes }))
     },
 }
 
