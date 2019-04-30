@@ -3,20 +3,18 @@
     {{#each orders}}
     <div class="order-cards card">
         <div class="shopping-header card-header">
-            {{!-- <div class="card-content"> --}}
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-96x96">
-                            <img class="cart-image" src="{{cakeId.image}}">
-                        </figure>
-                    </div>
-
-                    <div class="media-content media-right">
-                        <h3>Name: {{cakeId.name}}</h3>
-                        <h3>Price per Cake: ${{cakeId.price}}</h3>
-                    </div>
+            <div class="media">
+                <div class="media-left">
+                    <figure class="image is-96x96">
+                        <img class="cart-image" src="{{cakeId.image}}">
+                    </figure>
                 </div>
-            {{!-- </div> --}}
+
+                <div class="media-content media-right">
+                    <h3>Name: {{cakeId.name}}</h3>
+                    <h3>Price per Cake: ${{cakeId.price}}</h3>
+                </div>
+            </div>
         </div>
         <div class="form card-content">
             <form class="suggestion-form" action="/shoppingCart/{{_id}}?_method=PUT" method="POST">
@@ -43,15 +41,14 @@
     {{/each}}
 </main>
 
-
 <div class="total-cost card">
     <h2>Total cost: ${{sum}}</h2>
-        <div class="submit-order suggestion-form">
-            <form action="/" method="GET" >
-                <input class="button is-rounded" type="submit" value="Continue Shopping">
-            </form>
-            <form action="/shoppingCart/submit" method="POST">
-                <input id="submit-order" class="button is-rounded" type="submit" value="Submit Order">
-            </form>
-        </div>
+    <div class="submit-order suggestion-form">
+        <form action="/" method="GET">
+            <input class="button is-rounded" type="submit" value="Continue Shopping">
+        </form>
+        <form action="/shoppingCart/submit" method="POST">
+            <input id="submit-order" class="button is-rounded" type="submit" value="Submit Order">
+        </form>
+    </div>
 </div>

@@ -26,7 +26,6 @@ main{
     width: 100%
 }
 
-
 img{
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
@@ -38,7 +37,6 @@ img{
 .order-image{
     border-radius: .5em;
     margin-top: .8em;
-    
 }
 
 h1{
@@ -105,8 +103,6 @@ a:hover{
 .navbar-item{
     font-size: 2em;
 }
-
-
 .card{
     width: 35%;
     margin: 2em 0;
@@ -186,13 +182,9 @@ label{
     margin-bottom: 1.5em;
     padding: 1em 0 3em 0;
 }
-/* .card-header h2{
-    margin: .5em 0;
-} */
 .suggestion-form{
     width: 85%;
 }
-
 .submit{
     display: flex;
     justify-content: flex-end;
