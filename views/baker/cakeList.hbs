@@ -11,7 +11,7 @@
             <h3>Name: {{name}}</h3>
             <h3>Price: ${{price}}</h3>
             <h3>Description: <textarea class="textarea is-medium is-warning" name="comments" id="" cols="30" rows="3"
-                    form="addToCartForm">{{description}}</textarea></h3>
+                    form="addToCartForm" readonly="true">{{description}}</textarea></h3>
             <div class="submit-order">
                 <form action="/baker/cakes/update/{{_id}}" method="GET">
                     <input class="button is-rounded" type="submit" value="Update Cake">
