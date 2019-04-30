@@ -4,8 +4,8 @@
 - [Project Board](https://trello.com/b/j7Bg76zC/garden-cakes)
 
 ## Wireframing and White Boarding
-![Image](/Users/sarahtrapaga/Projects/Garden-Cakes/images/IMG_1959.jpeg)
-![Image](/Users/sarahtrapaga/Projects/Garden-Cakes/images/IMG_1960.jpeg)
-![Image](/Users/sarahtrapaga/Projects/Garden-Cakes/images/IMG_1961.jpeg)
-![Image](/Users/sarahtrapaga/Projects/Garden-Cakes/images/IMG_1962.jpeg)
-![Image](/Users/sarahtrapaga/Projects/Garden-Cakes/images/IMG_1963.jpeg)
+![Image](images/IMG_1959.jpeg)
+![Image](images/IMG_1960.jpeg)
+![Image](images/IMG_1961.jpeg)
+![Image](images/IMG_1962.jpeg)
+![Image](images/IMG_1963.jpeg)
