@@ -3,7 +3,8 @@ body{
     flex-direction: column;
     font-family: 'Amatic SC', cursive;
     background-image: url('https://i.imgur.com/zRLEX3c.jpg');
-    background-size: cover; 
+    background-size: cover;
+    background-attachment: fixed; 
     font-weight: 700;
     line-height: 3.2em;
     align-items: center;
